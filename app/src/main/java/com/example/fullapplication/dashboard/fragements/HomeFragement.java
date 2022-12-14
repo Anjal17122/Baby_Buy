@@ -2,6 +2,8 @@ package com.example.fullapplication.dashboard.fragements;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -29,15 +31,21 @@ public class HomeFragement extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_home_fragement, container, false);
         addButton = view.findViewById(R.id.product_add);
+
+
+        return view;
+
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(requireContext(), "Add Button Created", Toast.LENGTH_SHORT).show();
             }
         });
-
-        return view;
-
-
     }
 }
